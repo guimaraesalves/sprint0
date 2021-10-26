@@ -3,13 +3,17 @@ import { useState } from "react";
 
 function App() {
   const [fruits, setFruits] = useState([
-    { name: "banana", color: "yellow", price: 2 },
-    { name: "cherry", color: "red", price: 3 },
-    { name: "strawberry", color: "red", price: 4 },
+    { name: "Banana", color: "yellow", price: 2 },
+    { name: "Cherry", color: "red", price: 3 },
+    { name: "Strawberry", color: "red", price: 4 },
   ]);
 
   const fruitNames = fruits.map((item) => {
-    return <li>{item.name}</li>;
+    return (
+      <li>
+        {item.name} - R$ {item.price}
+      </li>
+    );
   });
 
   const filterRedFruits = fruits.filter((item) => {
