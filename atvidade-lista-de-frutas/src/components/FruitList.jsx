@@ -9,15 +9,14 @@ function FruitList(props) {
     );
   });
 
-  const filterRedFruits = props.fruits.filter((item) => {
-    return item.color === "red";
-  });
-
   const totalPrice = props.fruits.reduce((vlrAnterior, vlrAtual) => {
     return vlrAtual.price + vlrAnterior;
   }, 0);
 
-  function addFruit() {
+  function SelectFruit() {
+    const filterRedFruits = props.fruits.filter((item) => {
+      return item.color === "red";
+    });
     props.setFruits(filterRedFruits);
   }
   return (
@@ -29,7 +28,7 @@ function FruitList(props) {
           <li>{fruitNames}</li>
         </ul>
       </div>
-      <button className="btn" onClick={addFruit}>
+      <button className="btn" onClick={SelectFruit}>
         show red fruits
       </button>
     </div>
