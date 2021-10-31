@@ -1,15 +1,22 @@
 import React from "react";
+//import GetUserComponent from "./GetUserComponent";
 
-function WelcomePage({ user, setIsLoggedIn }) {
-  function HandleLogout() {
-    return setIsLoggedIn;
-  }
-  return (
+
+
+
+function WelcomePage({user, Logout}) {
+  
+
+
+return (
     <div>
-      <h2>Olá Mundo! E aí {user} ?</h2>
-      <button onClick={() => HandleLogout()}>Sair</button>
+      <h1>Welcome Back  {user}!</h1>
+        <button className="btn btn-primary" onClick={Logout}>
+          Logout
+        </button>
     </div>
   );
+  
+ 
 }
-
 export default WelcomePage;
