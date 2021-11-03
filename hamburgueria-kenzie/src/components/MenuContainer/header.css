@@ -1,0 +1,45 @@
+.filtro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+}
+input {
+  border: none;
+  background: #ffffff;
+  width: 70%;
+}
+input:focus {
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+}
+.filtro {
+  width: 30%;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+.logo1 {
+  color: #333333;
+  margin-left: 10%;
+}
+.logo2 {
+  color: #eb5757;
+  margin-left: 5%;
+}
+.search-input {
+  display: flex;
+  width: 365px;
+  height: 60px;
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
+}
+.header {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}

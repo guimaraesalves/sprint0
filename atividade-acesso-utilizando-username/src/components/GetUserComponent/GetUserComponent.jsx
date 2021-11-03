@@ -1,30 +1,21 @@
 import React, { useState } from "react";
 //import WelcomePage from "./WelcomePage";
 
+function GetUserComponent({ Logout, setUser }) {
+  const [userInput, setUserInput] = useState("");
 
-
-
-function GetUserComponent({ Login, setUser }) {
-  const [userInput, setUserInput] = useState(""); 
-
- 
-  
-  
+  console.log(userInput);
 
   return (
-    
     <div>
-    
       <h1>Please sign up. deslogado</h1>
       <form
         onSubmit={(event) => {
           event.preventDefault();
-          setUserInput(userInput);
-          
+
+          setUser(userInput);
         }}
-        
       >
-      
         <div className="col-md-3">
           <input
             placeholder="Nome"
@@ -35,19 +26,10 @@ function GetUserComponent({ Login, setUser }) {
           ></input>
         </div>
 
-        <button 
-          className="btn btn-primary" 
-          onClick={Login} 
-          type="submit" >
+        <button className="btn btn-primary" onClick={Logout} type="submit">
           Login
         </button>
-        
       </form>
-        
-        
-        
-        
-        
     </div>
   );
 }

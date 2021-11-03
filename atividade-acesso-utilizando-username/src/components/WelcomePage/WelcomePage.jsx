@@ -4,14 +4,14 @@ import React from "react";
 
 
 
-function WelcomePage({user, Logout}) {
+function WelcomePage({user, Login}) {
   
 
 
 return (
     <div>
       <h1>Welcome Back  {user}!</h1>
-        <button className="btn btn-primary" onClick={Logout}>
+        <button className="btn btn-primary" onClick={Login}>
           Logout
         </button>
     </div>
