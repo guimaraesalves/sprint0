@@ -1,0 +1,33 @@
+.card {
+  height: 250px;
+  max-width: 190px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin: 10px;
+  background-color: aliceblue;
+  color: cadetblue;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.picture {
+  height: 130px;
+  width: 130px;
+  object-fit: cover;
+}
+.status {
+  font-size: 10px;
+  text-align: center;
+  color: darkblue;
+}
+.Alive {
+  border: 1px solid #4fc957;
+  background-color: #85d48a;
+}
+
+@media (min-width: 400px) {
+  .card {
+    width: 160px;
+    margin-left: 15px;
+  }
+}
