@@ -15,6 +15,11 @@
   width: 130px;
   object-fit: cover;
 }
+.status {
+  font-size: 10px;
+  text-align: center;
+  color: darkblue;
+}
 .Alive{
   border: 1px solid #4fc957;
   background-color: #85d48a;
