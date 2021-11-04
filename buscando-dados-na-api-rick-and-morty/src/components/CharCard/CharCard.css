@@ -15,3 +15,14 @@
   width: 130px;
   object-fit: cover;
 }
+.Alive{
+  border: 1px solid #4fc957;
+  background-color: #85d48a;
+}
+
+@media (min-width: 400px) {
+  .card {
+    width: 160px;
+    margin-left: 15px;
+  }
+}

@@ -2,7 +2,7 @@ import "./CharCard.css";
 
 function CharCard({ char }) {
   return (
-    <div className="card">
+    <div key={char.id} className={`card ${char.status}`}>
       <label>{char.name}</label>
       <img className="picture" src={char.image} alt={char.name}></img>
     </div>
