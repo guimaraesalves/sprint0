@@ -8,29 +8,22 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState("");
 
-  function Login(isLoggedIn) {
-    setIsLoggedIn(!isLoggedIn);
-    setUser("");
-  }
+  function Login(name) {
+    setUser(name);
+    setIsLoggedIn(true);
+  };
 
-  function Logout(isLoggedIn) {
-    setIsLoggedIn(isLoggedIn);
-    setUser(user);
+  function Logout() {
+    setIsLoggedIn(false);
   }
 
   return (
     <header className="App-header">
       <div className="container mt-5">
-        {!isLoggedIn ? (
-          <GetUserComponent
-          isLoggedIn={setIsLoggedIn}
-          Logout={Logout}
-          setUser={setUser}
-        />
-          
+        {isLoggedIn ? (
+          <WelcomePage user={user} setIsLoggedIn={setIsLoggedIn} Logout={Logout} />
         ) : (
-          <WelcomePage isLoggedIn={setIsLoggedIn} Login={Login} user={user} />
-          
+          <GetUserComponent setIsLoggedIn={setIsLoggedIn} setUser={setUser} Login={Login} />
         )}
       </div>
     </header>

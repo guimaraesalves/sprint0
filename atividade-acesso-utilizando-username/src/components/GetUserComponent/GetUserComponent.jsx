@@ -1,32 +1,23 @@
 import React, { useState } from "react";
-//import WelcomePage from "./WelcomePage";
 
-function GetUserComponent({ Logout, setUser }) {
+function GetUserComponent({ Login }) {
   const [userInput, setUserInput] = useState("");
 
   console.log(userInput);
 
   return (
     <div>
-      <h1>Please sign up. deslogado</h1>
-      <form
-        onSubmit={(event) => {
-          event.preventDefault();
+      <h1>Logged out. Please sign up.</h1>
+      <form>
+        <input
+          placeholder="User"
+          className="form-control"
+          type="text"
+          value={userInput}
+          onChange={(event) => setUserInput(event.target.value)}
+        />
 
-          setUser(userInput);
-        }}
-      >
-        <div className="col-md-3">
-          <input
-            placeholder="Nome"
-            className="form-control"
-            type="text"
-            value={userInput}
-            onChange={(event) => setUserInput(event.target.value)}
-          ></input>
-        </div>
-
-        <button className="btn btn-primary" onClick={Logout} type="submit">
+        <button className="btn btn-primary" onClick={() => Login(userInput)}>
           Login
         </button>
       </form>
