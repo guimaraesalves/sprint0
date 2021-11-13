@@ -95,5 +95,7 @@ button {
   .box-products {
     width: 28%;
     min-height: 43vh;
+    display: flex;
+    flex-direction: column;
   }
 }
