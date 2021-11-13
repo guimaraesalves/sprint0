@@ -2,14 +2,13 @@ import React from "react";
 import Product from "../Product/Product";
 import "./MenuContainer.css";
 
-
-function MenuContainer({
+const MenuContainer = ({
   total,
   currentSale,
   setCurrentSale,
   handleClick,
   showProducts,
-}) {
+}) => {
   function handleRemover(produto) {
     setCurrentSale(currentSale.filter((item) => item !== produto));
   }
@@ -36,10 +35,10 @@ function MenuContainer({
                   {currentSale.map((prod, index) => (
                     <div className="box-new-products" key={index}>
                       <div className="img">
-                        <img src={prod.thumb} alt="" />
+                        <img src={prod.img} alt="hamburgueria" />
                       </div>
-                      <div>
-                        <div className="box-food">{prod.name}</div>
+                      <div className="box-food">
+                        <div className="box-name space">{prod.name}</div>
                         <div className="box-category space">
                           {prod.category}
                         </div>
@@ -54,7 +53,10 @@ function MenuContainer({
                     <p className="total-value">Valor Total</p>
                     <p className="total-price">R$ {total.toFixed(2)}</p>
                   </div>
-                  <button onClick={() => setCurrentSale([])}>
+                  <button
+                    className="button-total"
+                    onClick={() => setCurrentSale([])}
+                  >
                     Remover tudo
                   </button>
                 </>
@@ -65,6 +67,6 @@ function MenuContainer({
       </div>
     </div>
   );
-}
+};
 
 export default MenuContainer;

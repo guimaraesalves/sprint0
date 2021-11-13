@@ -7,71 +7,75 @@ import MenuContainer from "./components/MenuContainer/MenuContainer";
 function App() {
   const [input, setInput] = useState("");
   const [currentSale, setCurrentSale] = useState([]);
-  const [overall, setOverall] = useState(0);
-  const product_card = [
+  const [total, setTotal] = useState(0);
+  const [filterProduct, setFilterProduct] = useState([
     {
       id: 1,
       name: "Hamburguer",
       category: "Sanduíches",
       price: 14.0,
-      currency: "R$",
-      thumb: "https://i.ibb.co/fpVHnZL/hamburguer.png",
+      img: "https://i.ibb.co/fpVHnZL/hamburguer.png",
     },
     {
       id: 2,
       name: "X-Burguer",
       category: "Sanduíches",
       price: 16.0,
-      currency: "R$",
-      thumb: "https://i.ibb.co/djbw6LV/x-burgue.png",
+      img: "https://i.ibb.co/djbw6LV/x-burgue.png",
     },
     {
       id: 3,
       name: "Big Kenzie",
       category: "Sanduíches",
       price: 18.0,
-      currency: "R$",
-      thumb: "https://i.ibb.co/FYBKCwn/big-kenzie.png",
+      img: "https://i.ibb.co/FYBKCwn/big-kenzie.png",
     },
     {
       id: 4,
       name: "Fanta Guaraná",
       category: "Bebidas",
       price: 5.0,
-      currency: "R$",
-      thumb: "https://i.ibb.co/cCjqmPM/fanta-guarana.png",
+      img: "https://i.ibb.co/cCjqmPM/fanta-guarana.png",
     },
     {
       id: 5,
-      name: "Coca-Cola",
+      name: "Coca",
       category: "Bebidas",
       price: 4.99,
-      currency: "R$",
-      thumb: "https://i.ibb.co/fxCGP7k/coca-cola.png",
+      img: "https://i.ibb.co/fxCGP7k/coca-cola.png",
     },
     {
       id: 6,
-      name: "Milkshake",
+      name: "Milk-Shake",
       category: "Bebidas",
       price: 4.99,
-      currency: "R$",
-      thumb: "https://i.ibb.co/QNb3DJJ/milkshake-ovomaltine.png",
+      img: "https://i.ibb.co/QNb3DJJ/milkshake-ovomaltine.png",
     },
-  ];
+  ]);
 
-  function showProducts() {
-    if (input === "") {
-      return product_card.filter((item) => item);
-    } else {
-      product_card.filter((item) => item.name.includes(input));
-    }
-  }
+  const showProducts = () => {
+    return input === filterProduct
+      ? filterProduct.filter((item) => item)
+      : filterProduct.filter((item) =>
+          item.name
+            .toLowerCase()
+            .split()
+            .map((item) => item)
+            .join()
+            .includes(
+              input
+                .toLowerCase()
+                .split()
+                .map((item) => item)
+                .join()
+            )
+        );
+  };
 
-  function handleClick(product) {
-    if (currentSale.every((item) => item.id !== product_card.id)) {
-      return setCurrentSale([...currentSale, product]);
-    }
-  }
+  const handleClick = (product) => {
+    currentSale.every((item) => item.id !== filterProduct.id -1) &&
+      setCurrentSale([...currentSale,  product]);
+  };
 
   const tot = currentSale.reduce((acc, item) => acc + item.price, 0);
 
@@ -79,7 +83,7 @@ function App() {
     <>
       <div className="App">
         <header className="App-header">
-          <Header input={input} setInput={setInput} />
+          <Header setInput={setInput} input={input} />
         </header>
 
         <div className="App-main">
@@ -89,8 +93,8 @@ function App() {
             setCurrentSale={setCurrentSale}
             handleClick={handleClick}
             showProducts={showProducts}
-            cartTotal={overall}
-            setOverall={setOverall}
+            cartTotal={total}
+            setTotal={setTotal}
           />
         </div>
       </div>

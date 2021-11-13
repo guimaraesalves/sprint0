@@ -1,4 +1,4 @@
-.filtro {
+.filter-position {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,23 +14,23 @@ input:focus {
   border: 0 none;
   outline: 0;
 }
-.filtro {
+.filter-button {
   width: 30%;
 }
-.logo {
+.title {
   display: flex;
   align-items: center;
   width: 50%;
 }
-.logo1 {
+.title h1 {
   color: #333333;
   margin-left: 10%;
 }
-.logo2 {
+.title h2 {
   color: #eb5757;
   margin-left: 5%;
 }
-.search-input {
+.input-header {
   display: flex;
   width: 365px;
   height: 60px;
@@ -38,8 +38,14 @@ input:focus {
   padding: 10px;
   border-radius: 8px;
 }
-.header {
+.input-box {
   width: 50%;
   display: flex;
   justify-content: center;
+}
+
+@media (min-width: 370px) {
+  .input-box {
+    width: 300px;
+  }
 }
